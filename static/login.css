@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+@keyframes myAnimation{
+  0%
+  {
+    transform: translate3d(10px, 100px, 10px);
+    opacity: 0;
+  }
+  100%{
+    transform: translate3d(10px, 10px, 10px);
+    opacity: 1;
+  }
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+  background-color: #f1f4f9;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Left Panel Styling */
+.left-panel {
+  width: 50%;
+  background: linear-gradient(to bottom right, #3b0764, #10b981);
+  color: white;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.left-panel h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.left-panel p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.left-panel ul {
+  list-style-type: none;
+  padding: 0;
+  font-size: 18px;
+}
+
+.left-panel ul li::before {
+  content: "✔ ";
+  margin-right: 8px;
+  color: #bbf7d0;
+}
+
+.left-panel ul li {
+  margin-bottom: 12px;
+}
+
+/* Right Panel Styling */
+.right-panel {
+  animation: myAnimation 0.6s cubic-bezier(0.25, 0.1, 0.15, 1.03) forwards;
+  width: 50%;
+  background-color: #ffffff;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form h2 {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+  color: #3b0764;
+  margin-bottom: 30px;
+}
+
+input {
+  padding: 18px;
+  font-size: 17px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  transition: all 0.3s;
+}
+
+input:focus {
+  outline: none;
+  border-color: #22d3ee;
+  box-shadow: 0 0 6px rgba(34, 211, 238, 0.5);
+}
+
+button {
+  padding: 16px;
+  font-size: 18px;
+  background-color: #10b981;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0f9f79;
+}
+
+.link {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+}
+
+.link a {
+  color: #3b0764;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.hidden {
+  display: none;
+}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Talent Match AI - Login</title>
+ <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="container">
+    <!-- Left Branding Section -->
+    <div class="left-panel">
+      <h1>Talent Match AI</h1>
+      <p>Your smart assistant for perfect resume and job alignment.</p>
+      <ul>
+        <li>AI-Powered Resume Analysis</li>
+        <li>Get Matched with Ideal Roles</li>
+        <li>Instant Feedback & Tips</li>
+      </ul>
+    </div>
+
+    <!-- Right Form Section -->
+    <div class="right-panel">
+      <!-- Login Form -->
+      <form action="/"  method="post" id="loginForm">
+        <h2>Sign in to your account</h2>
+        <input type="email" placeholder="Your Email" name="email"  required />
+        <input type="password" placeholder="Password" name="password" required />
+        <button type="submit">Sign In</button>
+        <div class="link">
+          <p><a href="#">Forgot your password?</a></p>
+          <p>First time here? <a href="#" onclick="toggleForms()">Create an account</a></p>
+        </div>
+      </form>
+
+      <!-- Signup Form -->
+      <form action="/"  method="post" id="signupForm" class="hidden">
+        <h2>Create your account</h2>
+        <input type="text" placeholder="Full Name" name="nameR"  required />
+        <input type="email" placeholder="Your Email" name="emailR" required />
+        <input type="password" placeholder="Password" name="passwordR" required />
+        <button type="submit">Sign Up</button>
+        <div class="link">
+          <p>Already have an account? <a href="#" onclick="toggleForms()">Sign In</a></p> +
+        </div>
+      </form>
+    </div>
+  </div>
+ <script src="{{ url_for('static', filename='login.js') }}"></script>
+</body>
+</html>
