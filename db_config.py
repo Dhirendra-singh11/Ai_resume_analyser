@@ -1,9 +1,9 @@
-from flask import Flask, render_template, request,redirect
+from flask import Flask, render_template, request,redirect,flash
 from flask_mysqldb import MySQL
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = 'key696969' 
+app.secret_key = 'key696969'
 
 # MySQL configurations
 app.config["MYSQL_HOST"] = "127.0.0.1"
@@ -16,7 +16,6 @@ mysql = MySQL(app)
 @app.route("/", methods=["GET", "POST"])
 def auth():
     if request.method == "POST":
-        
         if "nameR" in request.form:
             username = request.form.get("emailR")
             password = request.form.get("passwordR")
@@ -25,9 +24,9 @@ def auth():
             try:
                 cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (username, hashed_pass))
                 mysql.connection.commit()
-                print("Account created successfully! Please log in.", "success")
+                flash("Account created successfully! Please log in.", "success")
             except Exception as e:
-                print(f"Error creating account: {e}", "danger")
+                flash("This email is already registered. Please use another one.", "danger")
             finally:
                 cur.close()
             return redirect("/")
@@ -40,10 +39,10 @@ def auth():
         user = cur.fetchone()
         cur.close()
         if user and check_password_hash(user[0], password):
-            print("Logged in successfully")
+            flash("Logged in successfully","sucess")
             
         else:
-            print("Login failed")
+            flash("Login failed","danger")
         return redirect("/")
 
     
