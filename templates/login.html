@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Talent Match AI - Login</title>
- <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+  <link rel="icon" type="image/png" href="{{url_for('static',filename='images/logo.png')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
+
 <body>
   <div class="container">
     <!-- Left Branding Section -->
@@ -21,12 +24,28 @@
     </div>
 
     <!-- Right Form Section -->
+
     <div class="right-panel">
       <!-- Login Form -->
-      <form action="/"  method="post" id="loginForm">
+      <div class="user-exsist-error">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        {% if category=='success' %}
+        <img class="error-symbol" src="{{url_for('static',filename='images/login-successful.png')}}" alt="erorr">
+        <p class="error-status-success">{{ message }}</p>
+        {% else %}
+        <img class="error-symbol" src="{{url_for('static',filename='images/error-sy.png')}}" alt="erorr">
+        <p class="error-status-error">{{ message }}</p>
+        {% endif %}
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+      </div>
+      <form action="/" method="post" id="loginForm">
         <h2>Sign in to your account</h2>
-        <input type="email" placeholder="Your Email" name="email"  required />
-        <input type="password" placeholder="Password" name="password" required />
+        <input type="email" placeholder="Your Email" name="email" required />
+        <input type="password" placeholder="Password" name="password" required >
         <button type="submit">Sign In</button>
         <div class="link">
           <p><a href="#">Forgot your password?</a></p>
@@ -35,9 +54,9 @@
       </form>
 
       <!-- Signup Form -->
-      <form action="/"  method="post" id="signupForm" class="hidden">
+      <form action="/" method="post" id="signupForm" class="hidden">
         <h2>Create your account</h2>
-        <input type="text" placeholder="Full Name" name="nameR"  required />
+        <input type="text" placeholder="Full Name" name="nameR" required />
         <input type="email" placeholder="Your Email" name="emailR" required />
         <input type="password" placeholder="Password" name="passwordR" required />
         <button type="submit">Sign Up</button>
@@ -47,6 +66,7 @@
       </form>
     </div>
   </div>
- <script src="{{ url_for('static', filename='login.js') }}"></script>
+  <script src="{{ url_for('static', filename='login.js') }}"></script>
 </body>
+
 </html>
