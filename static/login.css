@@ -1,15 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-@keyframes myAnimation{
-  0%
-  {
+
+@keyframes myAnimation {
+  0% {
     transform: translate3d(10px, 100px, 10px);
     opacity: 0;
   }
-  100%{
+
+  100% {
     transform: translate3d(10px, 10px, 10px);
     opacity: 1;
   }
+
+
 }
+
+@keyframes popError {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  90% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+}
+
 * {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -20,6 +46,7 @@ body {
   display: flex;
   height: 100vh;
   background-color: #f1f4f9;
+  overflow: hidden;
 }
 
 .container {
@@ -76,6 +103,30 @@ body {
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.05);
 }
 
+.user-exsist-error {
+  width: auto;
+  display: flex;
+  position: sticky;
+  border-radius: 17px;
+  box-shadow: 3px 8px 12px 0px gray;
+  justify-content: center;
+  margin-left: 193px;
+  margin-bottom: 47px;
+  animation: popError 5s ease forwards;
+  align-items: center;
+}
+
+.error-symbol {
+  height: 29px;
+  width: 40px;
+  display: hidden;
+}
+.error-status-success{
+  color:green;
+}
+.error-status-error{
+  color:red;
+}
 form {
   display: flex;
   flex-direction: column;
