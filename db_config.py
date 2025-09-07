@@ -39,7 +39,7 @@ def auth():
         user = cur.fetchone()
         cur.close()
         if user and check_password_hash(user[0], password):
-            flash("Logged in successfully","sucess")
+            flash("Logged in successfully","success")
             
         else:
             flash("Login failed","danger")
