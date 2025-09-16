@@ -36,6 +36,9 @@
 6. **Storage** – Resumes and results are stored in MySQL for users.  
 
 ---
+## 📸 Screenshots
+![Login UI](static/images/login-preview.png)
+![Main Analysis](static/images/main-preview.png)
 
 ## 📦 Installation & Setup
 
@@ -63,6 +66,4 @@ python db_congif.py
 ```**
 
 
-## 📸 Screenshots
-![Login UI](static/images/login-preview.png)
-![Main Analysis](static/images/main-preview.png)
+
