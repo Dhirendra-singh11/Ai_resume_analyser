@@ -37,9 +37,6 @@
 
 ---
 
-
-
-
 ## 📦 Installation & Setup
 
 ```bash
@@ -68,9 +65,10 @@ python db_congif.py
 ![Login UI](static/images/login-review.png)
 ![Main Analysis](static/images/main-preview.png)
 ---
-##📂 Project Structure
-```
 
+##📂 Project Structure
+
+```
 ai-resume-analyser/
 │── db_congif.py          # Flask application (routes, auth, upload)
 │── init_db.py            # Database initialization (users, resumes)
@@ -83,9 +81,9 @@ ai-resume-analyser/
 │   ├── main.js           # ATS Score chart visualization
 │── uploads/              # Uploaded resumes
 │── readme.md             # Documentation
+```
 
 ---
-```
 
 
 
