@@ -36,26 +36,9 @@
 6. **Storage** – Resumes and results are stored in MySQL for users.  
 
 ---
-## 📸 Screenshots
-![Login UI](static/images/login-review.png)
-![Main Analysis](static/images/main-preview.png)
----
 
-##📂 Project Structure
-ai-resume-analyser/
-│── db_congif.py          # Flask application (routes, auth, upload)
-│── init_db.py            # Database initialization (users, resumes)
-│── resume_analyser.py    # Resume parsing + AI analysis logic
-│── templates/
-│   ├── login.html        # Login & Signup UI
-│   ├── main.html         # Dashboard / Resume results
-│── static/
-│   ├── login.css         # Styles
-│   ├── main.js           # ATS Score chart visualization
-│── uploads/              # Uploaded resumes
-│── readme.md             # Documentation
 
----
+
 
 ## 📦 Installation & Setup
 
@@ -80,7 +63,30 @@ python init_db.py
 # Run the application
 python db_congif.py
 
-```**
+```
+## 📸 Screenshots
+![Login UI](static/images/login-review.png)
+![Main Analysis](static/images/main-preview.png)
+---
+##📂 Project Structure
+```
+
+ai-resume-analyser/
+│── db_congif.py          # Flask application (routes, auth, upload)
+│── init_db.py            # Database initialization (users, resumes)
+│── resume_analyser.py    # Resume parsing + AI analysis logic
+│── templates/
+│   ├── login.html        # Login & Signup UI
+│   ├── main.html         # Dashboard / Resume results
+│── static/
+│   ├── login.css         # Styles
+│   ├── main.js           # ATS Score chart visualization
+│── uploads/              # Uploaded resumes
+│── readme.md             # Documentation
+
+---
+```
+
 
 
 
