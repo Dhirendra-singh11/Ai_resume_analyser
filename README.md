@@ -37,7 +37,7 @@
 
 ---
 ## 📸 Screenshots
-![Login UI](static/images/login-preview.png)
+![Login UI](static/images/login-review.png)
 ![Main Analysis](static/images/main-preview.png)
 
 ## 📦 Installation & Setup
