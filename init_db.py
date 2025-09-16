@@ -15,9 +15,19 @@ try:
                password varchar(255) not null
                );
      """)
+    # conn.commit()
+
+    cursor.execute("""
+create table if not exists resumes
+                   (id INT AUTO_INCREMENT PRIMARY KEY,
+                   user_id int,
+                   filename varchar(50),
+                   ats_score int  not null,
+                   suggestions text,
+                   FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE);
+                   """)
     conn.commit()
     print("Table created sucessfully")
-
 except Exception as e:
      print(e)
 finally:

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Resume Analyzer</title>
+  <link rel="icon" type="image/png" href="{{url_for('static',filename='images/logo.png')}}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+</head>
+
+<body>
+  <div class="layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h2 class="logo">AI RESUME ANALYZER</h2>
+      <nav>
+        <ul>
+          <li><a href="#" class="active">Dashboard</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">My Resumes</a></li>
+          <li><a href="#">Track Jobs</a></li>
+          <li><a href="#" class="logout">Log Out</a></li>
+        </ul>
+      </nav>
+    </aside>
+
+    <main class="content">
+      <h2>Dashboard</h2>
+
+      <form action="/upload" method="post" enctype="multipart/form-data" class="upload-form">
+        <input type="file" id="fileinput" name="file" accept=".pdf,.csv" required hidden>
+        <label for="fileinput" class="btn btn-primary">📂 Upload Resume</label>
+        <button type="submit" class="btn btn-secondary">⚡ Analyze Resume</button>
+      </form>
+
+      <!-- Flash Messages -->
+      {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+      <ul class="messages">
+        {% for category, message in messages %}
+        <li class="{{ category }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      {% endwith %}
+
+      <!-- Analysis Results -->
+      {% if score is defined and result is defined %}
+      <section class="results">
+        <h3>Analysis Result</h3>
+        <div class="donut-container">
+            <svg class="donut-chart" viewBox="0 0 100 100">
+                <circle class="circle-bg" cx="50" cy="50" r="45"></circle>
+                <circle class="circle" cx="50" cy="50" r="45" id="donut"></circle>
+            </svg>
+            <div class="ats-score">
+              <div class="label">ATS Score</div>
+              <div class="value">{{ score }}%</div>
+            </div>
+        </div>
+        <pre>{{ result }}</pre>
+      </section>
+      {% endif %}
+
+      <!-- Recent Analysis Table -->
+      <section class="recent">
+        <h3>Recent Analysis</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Resume Name</th>
+              <th>Job Title</th>
+              <th>Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Sample data - replace with your dynamic content -->
+            <tr>
+              <td>John_Doe_Resume.pdf</td>
+              <td>Software Developer</td>
+              <td>85%</td>
+            </tr>
+            <tr>
+              <td>Jane_Smith_Resume.pdf</td>
+              <td>Data Analyst</td>
+              <td>92%</td>
+            </tr>
+            <tr>
+              <td>Mike_Johnson_Resume.pdf</td>
+              <td>UI/UX Designer</td>
+              <td>78%</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  
+  <script src="{{url_for('static',filename='main.js')}}"></script>
+</body>
+</html>
