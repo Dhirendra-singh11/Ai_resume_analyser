@@ -60,6 +60,9 @@ python init_db.py
 # Run the application
 python db_congif.py
 
+```**
+
+
+## 📸 Screenshots
 ![Login UI](static/images/login-preview.png)
 ![Main Analysis](static/images/main-preview.png)
-
