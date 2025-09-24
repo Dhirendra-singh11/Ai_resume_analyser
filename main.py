@@ -7,10 +7,11 @@ app = Flask(__name__)
 app.secret_key = 'key696969'
 
 
-app.config["MYSQL_HOST"] = os.environ.get("MYSQL_HOST", "127.0.0.1")
-app.config["MYSQL_USER"] = os.environ.get("MYSQL_USER", "appuser")
-app.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD", "app_password")
-app.config["MYSQL_DB"] = os.environ.get("MYSQL_DB", "ai_resume_analyser")
+
+app.config["MYSQL_HOST"] = os.environ.get("DB_HOST")  # Render database host
+app.config["MYSQL_USER"] = os.environ.get("DB_USER")  # Render database username
+app.config["MYSQL_PASSWORD"] = os.environ.get("DB_PASSWORD")  # Render database password
+app.config["MYSQL_DB"] = os.environ.get("DB_NAME")
 
 mysql = MySQL(app)
 
