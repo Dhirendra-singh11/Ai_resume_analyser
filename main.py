@@ -12,7 +12,6 @@ app.config["MYSQL_USER"] = os.environ.get("MYSQL_USER", "appuser")
 app.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD", "app_password")
 app.config["MYSQL_DB"] = os.environ.get("MYSQL_DB", "ai_resume_analyser")
 
-
 mysql = MySQL(app)
 
 @app.route("/", methods=["GET", "POST"])
@@ -84,3 +83,5 @@ if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
     app.run(host="0.0.0.0", port=port)
 
+    port=int(os.environ.get("PORT",5000))
+    app.run(host="0.0.0.0",port=port)
