@@ -59,6 +59,7 @@ python init_db.py
 
 # Run the application
 python db_congif.py
+<<<<<<< HEAD
 
 ```
 ## 📸 Screenshots
@@ -88,3 +89,5 @@ ai-resume-analyser/
 
 
 
+=======
+>>>>>>> 63417ec (Requirement updation)

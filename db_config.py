@@ -6,11 +6,12 @@ import os
 app = Flask(__name__)
 app.secret_key = 'key696969'
 
-# MySQL configurations
-app.config["MYSQL_HOST"] = "127.0.0.1"
-app.config["MYSQL_USER"] = "appuser"
-app.config["MYSQL_PASSWORD"] = "app_password"
-app.config["MYSQL_DB"] = "ai_resume_analyser"
+
+app.config["MYSQL_HOST"] = os.environ.get("MYSQL_HOST", "127.0.0.1")
+app.config["MYSQL_USER"] = os.environ.get("MYSQL_USER", "appuser")
+app.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD", "app_password")
+app.config["MYSQL_DB"] = os.environ.get("MYSQL_DB", "ai_resume_analyser")
+
 
 mysql = MySQL(app)
 
@@ -80,4 +81,6 @@ def upload_file():
 if __name__ == "__main__":
     if not os.path.exists("upload_folder"):
         os.makedirs("upload_folder")
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+

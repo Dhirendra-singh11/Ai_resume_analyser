@@ -4,8 +4,8 @@ import re
 import os
 import os.path as pathing
 import pandas as pd
-
-genai.configure(api_key="AIzaSyAh2bA2BcOWDHBIlxATbhI_iRRHiG7GYh0")
+api_key=os.environ.get("GOOGLE_API_KEY")
+genai.configure(api_key=api_key)
 upload_folder="uploads"
 if not os.path.exists(upload_folder):
         os.makedirs(upload_folder)
