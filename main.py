@@ -8,11 +8,10 @@ app.secret_key = 'key696969'
 
 
 
-app.config["MYSQL_HOST"] = os.environ.get("DB_HOST")  # Render database host
-app.config["MYSQL_USER"] = os.environ.get("DB_USER")  # Render database username
-app.config["MYSQL_PASSWORD"] = os.environ.get("DB_PASSWORD")  # Render database password
-app.config["MYSQL_DB"] = os.environ.get("DB_NAME")
-
+app.config["MYSQL_HOST"] = os.environ.get("MYSQL_HOST", "sql310.infinityfree.com")
+app.config["MYSQL_USER"] = os.environ.get("MYSQL_USER", "if0_40017579")
+app.config["MYSQL_PASSWORD"] = os.environ.get("MYSQL_PASSWORD", "Dhirendrasingh6")
+app.config["MYSQL_DB"] = os.environ.get("MYSQL_DB", "if0_40017579_ai_resume_analyser")
 mysql = MySQL(app)
 
 @app.route("/", methods=["GET", "POST"])
