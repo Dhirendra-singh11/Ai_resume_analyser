@@ -91,4 +91,3 @@ ai-resume-analyser/
 
 
 =======
->>>>>>> 63417ec (Requirement updation)
