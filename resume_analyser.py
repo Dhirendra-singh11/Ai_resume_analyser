@@ -35,7 +35,7 @@ def resume_analyse(resume,job_des="IT/software/testing related"):
     2. Suggest improvements in bullet points.
     """
 
-    model=genai.GenerativeModel("gemini-1.5-flash")
+    model=genai.GenerativeModel("gemini-2.0-flash")
     response=model.generate_content(predefined_prompt)
     final_analysis=response.text
 
